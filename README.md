@@ -38,7 +38,7 @@ The model was evaluated using test accuracy, precision, recall, F1-score, loss, 
 ## Results
 - Baseline test accuracy is 39%.
 - Improved test accuracy is 40%.
-- Recall of disgust improved from 0.40 to 0.54 to class weights.
+- Recall of disgust improved from 0.40 to 0.44 to class weights.
 - Best classes is happy and surprise.
 - Weakest classes is fear, angry and disgust because their expressions look similar.
 - Accuracy is limited to about 40 to 45% because Dense layers flatten the image and lose the position of facial features.
@@ -53,7 +53,7 @@ link= (https://0104397f26a9234c06.gradio.live/)
 
 ### Ethics & Limitations
 - Class imbalance may affect recognition of some emotions.
-- The model achieved 42% test accuracy, so predictions may be incorrect.
+- The model achieved 40% test accuracy, so predictions may be incorrect.
 - Lighting, image quality, and face angles and shapes may affect predictions.
 - The model may perform differently on real-world images.
 
