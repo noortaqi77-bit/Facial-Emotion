@@ -1,0 +1,7 @@
+tensorflow
+kagglehub
+scikit-learn
+matplotlib
+pandas
+gradio
+opencv-python-headless
