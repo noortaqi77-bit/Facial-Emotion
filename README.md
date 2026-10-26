@@ -35,19 +35,25 @@ Classifies a face image into one of 7 emotions:
 
 The model was evaluated using test accuracy, precision, recall, F1-score, loss, and a confusion matrix.
 
-The model achieved 40% test accuracy,
+## Results
+- Baseline test accuracy is 40%.
+- Improved test accuracy is 42%.
+- Recall of disgust improved from 0.40 to 0.54 to class weights.
+- Best classes is happy and surprise.
+- Weakest classes is fear, angry and disgust because their expressions look similar.
+- Accuracy is limited to about 40 to 45% because Dense layers flatten the image and lose the position of facial features.
 
 
-
-### Observations:
-- Best classes: happy and surprise (distinct expressions).
-- Weakest classes: angry, fear, sad (similar expressions, often confused).
-- Training accuracy rose while validation accuracy stayed flat and
-  validation loss increased, which indicates overfitting.
-- Dense layers flatten the image and lose spatial structure, so accuracy
-  is limited to about 40-45%.
 
   ### Application
 
 A Gradio interface allows users to upload a facial image or capture one using a webcam. The application displays the predicted expression and class probabilities.
-link= ()
+link= (https://85a77be3b9d4184fbd.gradio.live/)
+
+
+### Ethics & Limitations
+- Class imbalance may affect recognition of some emotions.
+- The model achieved 42% test accuracy, so predictions may be incorrect.
+- Lighting, image quality, and face angles and shapes may affect predictions.
+- The model may perform differently on real-world images.
+
