@@ -1,12 +1,12 @@
 # Facial Emotion Recognition (FER2013)
 
-## 1. Overview
+## Overview
 Classifies a face image into one of 7 emotions:
 
 (angry, disgust, fear, happy, neutral, sad, surprise) class
 
 
-## 2. Dataset
+## Dataset
 - Source: FER2013 (Kaggle: msambare/fer2013)
 - Images: 48x48, grayscale
 - train (24,403) , validation (4,306), test (7,178)
@@ -21,13 +21,21 @@ Classifies a face image into one of 7 emotions:
   and Validation 15% with 4,306 images
   The original test folder is 7,178 images, is kept untouched for final evaluation to see the performance.
 - **Labels:** using label_mode="categorical"
-- **Test set:** `shuffle=False` so predictions match the true labels in order.
-- **Class imbalance:** handled with `class_weight` (balanced) during training.
+- **Class imbalance:** handled with class_weight (balanced) during training.
 
 
 
-## 4. Architecture Choices
-Rescaling(1/255) → Flatten → BatchNormalization → Dense(100) → Dense(100) → Dense(73) → Dense(7, softmax)
+## Architecture Choices
+- architecture : Rescaling(1/255) → Flatten → BatchNormalization → Dense(200, ReLU) → Dense(100, ReLU) → Dense(80, ReLU) → Dense(50, ReLU) → Dense(7, Softmax)
+- Loss: categorical_crossentropy
+- Optimizer: Adam , with learning rate= 0.001
+- 
+
+## Evaluation
+
+The model was evaluated using test accuracy, precision, recall, F1-score, loss, and a confusion matrix.
+
+The model achieved 40% test accuracy,
 
 
 
@@ -38,3 +46,8 @@ Rescaling(1/255) → Flatten → BatchNormalization → Dense(100) → Dense(100
   validation loss increased, which indicates overfitting.
 - Dense layers flatten the image and lose spatial structure, so accuracy
   is limited to about 40-45%.
+
+  ### Application
+
+A Gradio interface allows users to upload a facial image or capture one using a webcam. The application displays the predicted expression and class probabilities.
+link= ()
