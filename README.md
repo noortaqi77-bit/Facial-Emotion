@@ -36,7 +36,7 @@ Classifies a face image into one of 7 emotions:
 The model was evaluated using test accuracy, precision, recall, F1-score, loss, and a confusion matrix.
 
 ## Results
-- Baseline test accuracy is 40%.
+- Baseline test accuracy is 39.6%.
 - Improved test accuracy is 42%.
 - Recall of disgust improved from 0.40 to 0.54 to class weights.
 - Best classes is happy and surprise.
